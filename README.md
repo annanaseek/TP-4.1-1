@@ -15,3 +15,5 @@
 [Miro](https://miro.com/app/board/uXjVOH2eo38=/?invite_link_id=800835930892)
 
 [Техническое задание](https://github.com/annanaseek/TP-4.1-1/blob/main/%D0%A2%D0%97.docx)
+
+[Курсовой проект](https://github.com/annanaseek/TP-4.1-1/blob/main/%D0%9A%D0%9F.docx)
