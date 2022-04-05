@@ -1,0 +1,13 @@
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.header {
+	padding: 30px 0;
+}
+
+.icons_container:first-child{
+	margin-right: 30px;
+}
