@@ -11,8 +11,11 @@
         "strict": true,
         "sourceMap": true,
         "target": "esnext",
-        "plugins": [{ "name": "typescript-plugin-css-modules" }],
-
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ],
     },
     "exclude": [
         "node_modules"

@@ -1,0 +1,49 @@
+@import './styles/_vars.scss';
+@import './styles/_mixins.scss';
+
+
+*, *::before, *::after{
+	box-sizing: border-box;
+	@include reset;
+}
+*::selection{
+	background: rgba(245, 77, 78, 0.5);
+}
+body, ul, li {
+}
+label{
+	user-select: none;
+}
+a{
+	color: $black;
+	text-decoration: none;
+}
+a:hover{
+	color: $green;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: $ff;
+	font-style: normal;
+	font-weight: normal;
+	font-size: rem(20);
+	line-height: 30px;
+	color: $black;
+	background: $white;
+	position: relative;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}

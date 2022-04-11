@@ -1,0 +1,39 @@
+@use "sass:math";
+
+@function rem($num){
+	@return math.div($num,$globalFontsSize) + rem;
+}
+
+@mixin reset{
+	margin: 0;
+	padding: 0;
+}
+
+@mixin absoluteCentre {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Columns */
+@mixin columns ($total-columns: 12) {
+
+	// column styles
+	%grid-column {
+		width: 100%;
+		padding-left: $spaceCol + px;
+		padding-right: $spaceCol + px;
+	}
+
+	@for $i from 1 through $total-columns {
+		$percent: math.div($i, $total-columns);
+		.col-#{$i} {
+			@extend %grid-column;
+			flex: 0 0 $percent*100%;
+			max-width: $percent*100%;
+		}
+	}
+}
+

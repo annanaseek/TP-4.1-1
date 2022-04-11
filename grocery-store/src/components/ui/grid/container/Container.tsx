@@ -1,9 +1,13 @@
-import styles from "./Container.module.scss"
+import "./Container.scss"
 import React from "react";
 
-function Container({children}) {
+interface Props {
+	children: React.ReactNode
+}
+
+function Container({children}:Props) {
 	return (
-		<div className={ styles.wr }>
+		<div className=" wr ">
 			{ children }
 		</div>
 	);
