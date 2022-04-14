@@ -38,9 +38,11 @@ body {
 }
 
 .row {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	margin-left:-20px;
+	margin-right:-20px;
 }
 
 .center {

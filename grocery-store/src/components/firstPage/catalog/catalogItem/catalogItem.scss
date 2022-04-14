@@ -1,0 +1,33 @@
+@import '../../../../styles/_vars';
+
+.catalogItem {
+    position: relative;
+    box-shadow: 2px 3px 10px rgba(166, 171, 189, 0.4);
+    border-radius: 15px;
+    width: 480px;
+    height: 255px;
+    margin-right: 0px !important;
+    margin-bottom: 25px;
+}
+
+.catalogItem_text {
+    color: $black;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+
+    z-index: 2;
+    padding-left: 30px;
+    padding-top: 70px;
+}
+
+.catalog_img {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+

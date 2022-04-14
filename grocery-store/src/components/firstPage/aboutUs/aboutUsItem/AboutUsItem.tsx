@@ -11,7 +11,6 @@ const AboutUsItem = ({ number, text }: Props) => {
 		<div className="aboutUsItem">
 			<div className="aboutUsItem_num">{number}</div>
 			<div className="aboutUsItem_text" dangerouslySetInnerHTML={{ __html:text }}/>
-
 		</div>
 	);
 }

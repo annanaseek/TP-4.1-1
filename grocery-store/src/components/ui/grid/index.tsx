@@ -1,3 +1,4 @@
 import Container from "./container/Container";
+import Col from "./col/Col";
 
-export { Container }
+export { Container, Col }
