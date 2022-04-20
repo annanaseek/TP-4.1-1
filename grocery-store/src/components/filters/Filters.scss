@@ -1,0 +1,45 @@
+.filters {
+	background: #FBFBFB;
+	border-radius: 20px;
+
+	padding: 24px 12px 50px 12px;
+	margin-right: 35px;
+}
+
+.filters_title {
+	font-weight: 600;
+	font-size: 23px;
+	line-height: 121%;
+	padding: 0 20px;
+}
+
+.filters_line {
+	width: 280px;
+	height: 0px;
+	border: 0.5px solid rgba(52, 52, 52, 0.3);
+
+	margin-top: 20px;
+}
+
+.filters_slug_title {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 121%;
+	padding: 0 20px;
+
+	margin-top: 15px;
+}
+
+.filters_slug_items {
+	margin-top: 15px;
+	padding: 0 30px;
+	justify-self: center;
+}
+
+.filters_slug_item {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 121%;
+
+	margin-bottom: 10px;
+}

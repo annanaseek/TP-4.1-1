@@ -1,22 +1,28 @@
-import './App.css';
-import Header from './components/layout/header/Header'
-import Footer from './components/layout/footer/Footer'
-import FirstBlock from './components/firstPage/firstBlock/FirstBlock';
-import AboutUs from './components/firstPage/aboutUs/AboutUs';
-import React from 'react';
-import Catalog from './components/firstPage/catalog/Catalog';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Main from './pages/Main';
+import Catalog from './pages/Catalog';
+import Slug from './pages/productCatalog/slug'
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <>
-      <Header />
-        <FirstBlock />
-        <AboutUs />
-        <Catalog />
-      <Footer />
-    </>
+class App extends Component {
+  render() {
 
-  );
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/catalog">
+            <Catalog />
+          </Route>
+          <Route path="/productCatalog/slug">
+            <Slug />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

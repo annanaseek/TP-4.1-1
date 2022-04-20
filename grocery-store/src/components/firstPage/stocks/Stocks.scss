@@ -1,0 +1,33 @@
+@import '../../../styles/_vars';
+
+.stocks_section {
+    margin-top: 95px;
+}
+
+.stocksTitle {
+    margin-bottom: 45px;
+}
+
+.stocks_showAll {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 152%;
+
+    color: $green;
+}
+
+.slide {
+    width: 350px !important;
+    margin-right: 26px !important;
+    margin-bottom: 65px;
+}
+
+.swiper-scrollbar-drag {
+    background-color: #DBDBDB !important;
+}
+
+.swiper-scrollbar {
+    background-color: #ECECEC !important;
+}

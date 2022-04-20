@@ -5,20 +5,23 @@ import React from 'react';
 
 function Footer() {
 	return (
-		<Container>
-			<div className={`row footer`}>
-				<div className={`logo`}>
-					<Logo />
-				</div>
-
-				<div>
-					<div className={`icons_container`}>
-						Служба поддержки
+		<section className="footer_section">
+			<hr className="hr_line" />
+			<Container>
+				<div className={`row footer`}>
+					<div className={`logo`}>
+						<Logo />
 					</div>
-					+7 (356) 888 88 88
+
+					<div>
+						<div className={`icons_container`}>
+							Служба поддержки
+						</div>
+						+7 (356) 888 88 88
+					</div>
 				</div>
-			</div>
-		</Container>
+			</Container>
+		</section>
 	);
 }
 
