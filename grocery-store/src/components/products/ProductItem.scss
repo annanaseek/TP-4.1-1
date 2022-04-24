@@ -2,7 +2,7 @@
 
 
 .product_item {
-	max-width: 360px;
+	width: 100%;
 	background: #FFFFFF;
 	box-shadow: 0px 0px 15px rgba(107, 107, 107, 0.15);
 	border-radius: 10px;
@@ -45,6 +45,17 @@
 	/* or 27px */
 
 	color: #D6D6D6;
+}
+
+.product_item__price_big {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 27px;
+	line-height: 152%;
+	/* or 27px */
+
+	color: #757575;
 }
 
 .product_item_prices {

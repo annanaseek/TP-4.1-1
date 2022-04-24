@@ -1,0 +1,131 @@
+@import '../../styles/vars';
+
+.basket {
+	margin-top: 115px;
+}
+
+.basket_img {
+	margin-right: 52px;
+}
+
+.basket_title {
+	font-weight: 600;
+	font-size: 18px;
+	max-width: 342px;
+	margin-right: 52px;
+
+}
+
+.basket_amount {
+	padding: 10px 15px;
+	background: rgba(210, 210, 213, 0.4);
+	border-radius: 20px;
+	margin-right: 52px;
+
+}
+
+.basket_btn_amount_minus {
+	font-weight: 400;
+	font-size: 30px;
+
+	margin-right: 30px;
+}
+
+.basket_btn_amount_plus {
+	font-weight: 400;
+	font-size: 30px;
+}
+
+.basket_amount_text {
+	font-weight: 500;
+	font-size: 16px;
+	margin-right: 30px;
+}
+
+.basket_price {
+	font-weight: 500;
+	font-size: 25px;
+}
+
+.basket_item {
+	padding: 15px 0px;
+	margin-bottom: 50px;
+
+	align-items: center;
+}
+
+.basket_clean_btn {
+	font-weight: 600;
+	font-size: 18px;
+	text-align: right;
+	color: #B4B4B4;
+}
+
+.basket_items_width {
+	max-width: 866px;
+}
+
+.basket_info {
+	max-width: 450px;
+	padding: 50px 41px;
+
+	box-shadow: 0px 4px 8px rgba(82, 82, 82, 0.25);
+	border-radius: 20px;
+}
+
+.basket_info__cost_product_title,
+.basket_info__delivery_title {
+	font-weight: 500;
+	font-size: 18px;
+	margin: 0;
+}
+
+.basket_info__cost_product_cost,
+.basket_info__delivery_cost {
+	font-weight: 500;
+	font-size: 18px;
+	margin: 0;
+}
+
+.basket_info__amount_cost_title {
+	font-weight: 500;
+	font-size: 22px;
+		margin: 0;
+}
+
+.basket_info__amount_cost_cost {
+	font-weight: 500;
+	font-size: 25px;
+		margin: 0;
+}
+
+.basket_info__order_btn {
+	padding: 15px 96px;
+	background: $green;
+	border-radius: 25px;
+	margin-bottom: 10px;
+
+	color: $white;
+}
+
+.basket_info__interval_delivery_btn {
+	padding: 15px 95px;
+	border: 1px solid $green;
+	box-sizing: border-box;
+	border-radius: 25px;
+
+	color: $green;
+}
+
+.basket_info__cost_product {
+	margin-bottom: 20px;
+}
+
+.basket_info__delivery {
+	margin-bottom: 30px;
+}
+
+.basket_info__amount_cost {
+	margin-bottom: 25px;
+
+}
