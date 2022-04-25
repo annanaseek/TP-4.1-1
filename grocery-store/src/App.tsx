@@ -4,6 +4,7 @@ import Catalog from './pages/Catalog';
 import Slug from './pages/productCatalog/slug'
 import SlugProduct from './pages/productCatalog/product/slug'
 import Basket from './pages/basket/Basket';
+import Order from './pages/order/Order';
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -26,6 +27,9 @@ class App extends Component {
           </Route>
           <Route path="/basket/Basket">
             <Basket />
+          </Route>
+          <Route path="/order/Order">
+            <Order />
           </Route>
         </Switch>
       </BrowserRouter>
