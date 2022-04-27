@@ -5,6 +5,9 @@ import Slug from './pages/productCatalog/slug'
 import SlugProduct from './pages/productCatalog/product/slug'
 import Basket from './pages/basket/Basket';
 import Order from './pages/order/Order';
+import IntervalDelivery from './pages/order/IntervalDelivery';
+import Authorization from './pages/authorization/Authorization';
+import Registration from './pages/registration/Registration';
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -30,6 +33,15 @@ class App extends Component {
           </Route>
           <Route path="/order/Order">
             <Order />
+          </Route>
+          <Route path="/order/IntervalDelivery">
+            <IntervalDelivery />
+          </Route>
+          <Route path="/authorization/Authorization">
+            <Authorization />
+          </Route>
+          <Route path="/registration/Registration">
+            <Registration />
           </Route>
         </Switch>
       </BrowserRouter>

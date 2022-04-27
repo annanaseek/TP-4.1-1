@@ -9,6 +9,8 @@
     border-radius: 20px;
     border-color: $white;
     margin-right: 10px;
+    outline: none;
+    outline-offset: 0px !important;
 }
 
 .search_btn {
@@ -20,5 +22,6 @@
     font-weight: 600;
     font-size: 18px;
     border-color: $green;
-
+    outline: 0;
+    outline-offset: 0
 }

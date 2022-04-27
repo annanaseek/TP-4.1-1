@@ -1,0 +1,78 @@
+@import '../../styles/vars';
+
+.auth {
+	width: 560px;
+	margin: 0 auto;
+	padding: 60px 60px;
+	margin-top: 153px;
+	margin-bottom: 180px;
+
+	background-color: $white;
+	border: 2.5px solid #F3F4F6;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
+
+.auth_title {
+	font-weight: 600;
+	font-size: 26px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.auth_item__title {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.auth_item__input input[type=text] {
+	border: 1px solid #C4C4C4;
+	border-radius: 10px;
+	color: #AAAAAA;
+	font-weight: 200;
+	font-size: 18px;
+
+	padding: 10px 15px;
+	width: 100%;
+}
+
+input[type=text]:focus {
+	outline: 0.005px solid #C4C4C4;
+}
+
+.auth_item {
+	margin-bottom: 20px;
+}
+
+.auth_items {
+	margin-bottom: 45px;
+}
+
+.auth_btn1 {
+	font-weight: 600;
+	font-size: 18px;
+	color: $white;
+	width: 100%;
+	margin-bottom: 15px;
+	background: $green;
+	border-radius: 20px;
+	padding: 14px 0;
+	border-color: $green;
+	box-sizing: border-box;
+}
+
+.auth_btn2 {
+	font-weight: 600;
+	font-size: 18px;
+	color: #686868;
+	width: 100%;
+	padding: 14px 0;
+	background: $white;
+	border-radius: 20px;
+
+	border: 1px solid #686868;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
