@@ -2,23 +2,31 @@
 @import './styles/_mixins.scss';
 
 
-*, *::before, *::after{
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	@include reset;
 }
-*::selection{
+
+*::selection {
 	background: rgba(245, 77, 78, 0.5);
 }
-body, ul, li {
-}
-label{
+
+body,
+ul,
+li {}
+
+label {
 	user-select: none;
 }
-a{
+
+a {
 	color: $black;
 	text-decoration: none;
 }
-a:hover{
+
+a:hover {
 	color: $green;
 }
 
@@ -38,12 +46,16 @@ body {
 }
 
 .row {
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .center {
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	box-shadow: 0px 8px 11px rgba(172, 172, 172, 0.15);
 }

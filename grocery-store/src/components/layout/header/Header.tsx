@@ -7,20 +7,22 @@ import './Header.scss'
 
 function Header() {
 	return (
-		<Container>
-			<div className="row header">
-				<div className="logo">
-					<Logo />
-				</div>
-
+		<div className="header">
+			<Container>
 				<div className="row">
-					<div className="icons_container">
-						<Basket />
+					<div className="logo">
+						<Logo />
 					</div>
-					<Account />
+
+					<div className="row">
+						<div className="icons_container">
+							<Basket />
+						</div>
+						<Account />
+					</div>
 				</div>
-			</div>
-		</Container>
+			</Container>
+		</div>
 	);
 }
 

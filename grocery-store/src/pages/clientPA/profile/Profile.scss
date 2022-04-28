@@ -1,0 +1,79 @@
+@import '../../../styles/_vars.scss';
+
+.row_start {
+	display: flex;
+	flex-direction: row;
+}
+
+.pa_menu_items {
+	margin-right: 85px;
+	margin-top: 90px;
+}
+
+.pa_menu_item_active {
+	width: 230px;
+	padding: 7px 20px;
+	color: $green;
+	text-align: left;
+	border: 1px solid #40BE5C;
+	box-sizing: border-box;
+	border-radius: 20px;
+	margin-bottom: 15px;
+}
+
+.pa_menu_item {
+	margin-left: 20px;
+	text-align: left;
+
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.pa_profile {
+	margin-top: 90px;
+}
+
+.pa_profile_item_name,
+.pa_profile_item_phone,
+.pa_profile_item_pass,
+.pa_profile_item_card {
+	margin-bottom: 45px;
+}
+
+.pa_profile_item_title {
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.pa_profile_item_text {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.pa_profile_btn1,
+.pa_profile_btn2 {
+	font-weight: 600;
+	font-size: 18px;
+	padding: 14px 45px;
+	border-radius: 30px;
+	margin-bottom: 50px;
+
+}
+
+.pa_profile_btn1 {
+	color: $white;
+	background-color: $green;
+}
+
+.pa_profile_btn2 {
+	color: $green;
+	border: 1px solid $green;
+}
+
+.pa_profile_btn_text {
+	font-weight: 600;
+	font-size: 18px;
+	color: $green;
+}

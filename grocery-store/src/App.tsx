@@ -8,6 +8,9 @@ import Order from './pages/order/Order';
 import IntervalDelivery from './pages/order/IntervalDelivery';
 import Authorization from './pages/authorization/Authorization';
 import Registration from './pages/registration/Registration';
+import Profile from './pages/clientPA/profile/Profile';
+import Orders from './pages/clientPA/orders/Orders'
+import OrderProducts from './pages/clientPA/orders/order_products/OrderProducts';
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -42,6 +45,15 @@ class App extends Component {
           </Route>
           <Route path="/registration/Registration">
             <Registration />
+          </Route>
+          <Route path="/clientPA/profile/Profile">
+            <Profile />
+          </Route>
+          <Route path="/clientPA/orders/Orders">
+            <Orders />
+          </Route>
+          <Route path="/clientPA/orders/order_products/OrderProducts">
+            <OrderProducts />
           </Route>
         </Switch>
       </BrowserRouter>
