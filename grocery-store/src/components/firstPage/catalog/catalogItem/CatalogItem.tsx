@@ -12,7 +12,7 @@ const CatalogItem = ({ text, img, color }: Props) => {
 			<a href="#" >
 				<div className="catalogItem_text" dangerouslySetInnerHTML={{ __html: text }} />
 				<div className="catalog_img">
-					<img src={`./catalog/${img}`} alt="" />
+					<img src={`/${img}`} alt="" />
 				</div>
 			</a>
 		</div>
