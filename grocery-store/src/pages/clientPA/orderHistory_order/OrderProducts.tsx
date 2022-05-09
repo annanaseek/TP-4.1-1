@@ -1,10 +1,9 @@
 import React from "react";
-import Header from '../../../../components/layout/header/Header'
-import Footer from "../../../../components/layout/footer/Footer";
-import './OrderProducts.scss'
-import { Container } from "../../../../components/ui/grid";
+import Header from '../../../components/layout/header/Header'
+import Footer from "../../../components/layout/footer/Footer";
+import { Container } from "../../../components/ui/grid";
 
-const OrderProducts = () => {
+const OrderProductHistory = () => {
 	return (
 		<>
 			<Header />
@@ -14,10 +13,10 @@ const OrderProducts = () => {
 						<div className="pa_menu_item">
 							Аккаунт
 						</div>
-						<div className="pa_menu_item_active">
+						<div className="pa_menu_item">
 							Заказы
 						</div>
-						<div className="pa_menu_item">
+						<div className="pa_menu_item_active">
 							История заказов
 						</div>
 					</div>
@@ -52,4 +51,4 @@ const OrderProducts = () => {
 	);
 }
 
-export default OrderProducts;
+export default OrderProductHistory;

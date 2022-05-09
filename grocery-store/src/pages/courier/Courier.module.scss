@@ -1,0 +1,30 @@
+@import '../../styles/vars';
+
+.pa_menu_items {
+	margin-right: 85px;
+	margin-top: 90px;
+	width: 250px;
+}
+
+.pa_menu_item {
+	margin-left: 20px;
+	text-align: left;
+
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.pa_menu__item {
+	padding-left: 20px;
+}
+
+.pa_menu_item_active {
+	padding: 7px 40px 7px 20px;
+	color: $green;
+	text-align: left;
+	border: 1px solid #40BE5C;
+	box-sizing: border-box;
+	border-radius: 20px;
+	margin-bottom: 15px;
+}

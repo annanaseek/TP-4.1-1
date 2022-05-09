@@ -51,6 +51,11 @@ body {
 	flex-wrap: wrap;
 }
 
+.row_start {
+	display: flex;
+	flex-direction: row;
+}
+
 .center {
 	justify-content: center;
 	align-items: center;
