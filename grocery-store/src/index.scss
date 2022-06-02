@@ -13,10 +13,6 @@
 	background: rgba(245, 77, 78, 0.5);
 }
 
-body,
-ul,
-li {}
-
 label {
 	user-select: none;
 }
@@ -43,6 +39,10 @@ body {
 	color: $black;
 	background: $white;
 	position: relative;
+}
+
+input, button {
+	border: 0;
 }
 
 .row {

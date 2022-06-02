@@ -37,15 +37,15 @@ const Profile = () => {
 							Статус работы
 						</div>
 						<div className={styles.checkbox_ios}>
-							<input type="checkbox"/>
+							<input type="checkbox" />
 							<span className={styles.checkbox_ios_switch}></span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className={styles.courier_profile_btn_text}>
+			<a href="/authorization" className={styles.courier_profile_btn_text}>
 				Выйти из аккаунта
-			</div>
+			</a>
 		</>
 	);
 }

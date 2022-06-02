@@ -31,8 +31,14 @@ const Authorization = () => {
 							</div>
 						</div>
 					</div>
-					<button className="auth_btn1">Авторизоваться</button>
-					<button className="auth_btn2">Зарегистрироваться</button>
+					<div className="center">
+						<div className="auth_margin">
+							<a href="/" className="auth_btn1">Авторизоваться</a>
+						</div>
+						<div>
+							<a href="/registration" className="auth_btn2">Зарегистрироваться</a>
+						</div>
+					</div>
 				</div>
 			</Container>
 			<Footer />

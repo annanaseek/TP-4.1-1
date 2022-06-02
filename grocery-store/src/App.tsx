@@ -28,28 +28,28 @@ class App extends Component {
           <Route path="/catalog">
             <Catalog />
           </Route>
-          <Route path="/productCatalog/slug">
+          <Route path="/product-catalog/slug">
             <Slug />
           </Route>
-          <Route path="/productCatalog/product/slug">
+          <Route path="/product-catalog/product/slug">
             <SlugProduct />
           </Route>
-          <Route path="/basket/Basket">
+          <Route path="/basket">
             <Basket />
           </Route>
-          <Route path="/order/Order">
+          <Route path="/order">
             <Order />
           </Route>
-          <Route path="/order/IntervalDelivery">
+          <Route path="/order/interval-delivery">
             <IntervalDelivery />
           </Route>
-          <Route path="/authorization/Authorization">
+          <Route path="/authorization">
             <Authorization />
           </Route>
-          <Route path="/registration/Registration">
+          <Route path="/registration">
             <Registration />
           </Route>
-          <Route path="/clientPA/orders/order_products/OrderProducts">
+          <Route path="/clientPA/orders/order_products/order-products">
             <OrderProducts />
           </Route>
           <Route path="/clientPA/profile">
@@ -64,7 +64,7 @@ class App extends Component {
           <Route path="/clientPA/orderHistory">
             <ClientPA />
           </Route>
-          <Route path="/clientPA/orderHistory/orderHistory_order/OrderProducts">
+          <Route path="/clientPA/orderHistory/order-history_order/order-products">
             <OrderProductHistory />
           </Route>
           <Route path="/admin/products">
@@ -73,10 +73,10 @@ class App extends Component {
           <Route path="/admin/users">
             <Admin />
           </Route>
-          <Route path="/admin/orderHistory">
+          <Route path="/admin/order-history">
             <Admin />
           </Route>
-          <Route path="/admin/addCategory">
+          <Route path="/admin/add-category">
             <AddCategory />
           </Route>
           <Route path="/courier/profile">
@@ -85,7 +85,7 @@ class App extends Component {
           <Route path="/courier/orders">
             <Courier />
           </Route>
-          <Route path="/courier/orderHistory">
+          <Route path="/courier/order-history">
             <Courier />
           </Route>
         </Switch>

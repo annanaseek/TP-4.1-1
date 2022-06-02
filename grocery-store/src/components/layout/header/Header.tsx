@@ -11,14 +11,18 @@ function Header() {
 			<Container>
 				<div className="row">
 					<div className="logo">
-						<Logo />
+						<a href="/">
+							<Logo />
+						</a>
 					</div>
 
 					<div className="row">
-						<div className="icons_container">
+						<a href="/basket/Basket" className="icons_container">
 							<Basket />
-						</div>
-						<Account />
+						</a>
+						<a href="/registration/Registration">
+							<Account />
+						</a>
 					</div>
 				</div>
 			</Container>

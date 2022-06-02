@@ -68,7 +68,7 @@ const Order = () => {
 					</div>
 				</div>
 				<div className="ordering_btn_container">
-					<button className="ordering_btn">Оформить заказ</button>
+					<a href="#" className="ordering_btn">Оформить заказ</a>
 				</div>
 			</Container>
 			<Footer />

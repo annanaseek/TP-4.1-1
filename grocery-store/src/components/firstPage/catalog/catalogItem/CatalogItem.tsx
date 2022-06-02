@@ -9,10 +9,10 @@ interface Props {
 const CatalogItem = ({ text, img, color }: Props) => {
 	return (
 		<div className="catalogItem" style={{ background: `${color}` }}>
-			<a href="#" >
+			<a href="/product-catalog/slug" >
 				<div className="catalogItem_text" dangerouslySetInnerHTML={{ __html: text }} />
 				<div className="catalog_img">
-					<img src={`/${img}`} alt="" />
+					<img src={`/catalog/${img}`} alt="" />
 				</div>
 			</a>
 		</div>

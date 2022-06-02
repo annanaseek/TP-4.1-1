@@ -87,10 +87,14 @@ const Basket = () => {
 							</div>
 						</div>
 						<div className="basket_info__order_btn">
-							Оформить заказ
+							<a href="/order" className="basket-order-link">
+								Оформить заказ
+							</a>
 						</div>
 						<div className="basket_info__interval_delivery_btn">
-							Оформить заказ
+							<a href="/order/interval-delivery" className="basket-order_interval-link">
+								Оформить заказ
+							</a>
 						</div>
 					</div>
 				</div>

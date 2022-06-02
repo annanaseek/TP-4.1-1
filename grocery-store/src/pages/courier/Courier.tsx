@@ -27,7 +27,7 @@ const Admin = () => {
 							</NavLink>
 						</div>
 						<div className={styles.pa_menu_item}>
-							<NavLink className={styles.pa_menu__item} activeClassName={styles.pa_menu_item_active} to={"/courier/orderHistory"}>
+							<NavLink className={styles.pa_menu__item} activeClassName={styles.pa_menu_item_active} to={"/courier/order-history"}>
 								История заказов
 							</NavLink>
 						</div>
@@ -35,7 +35,7 @@ const Admin = () => {
 					<div>
 						<Route path='/courier/profile' component={Profile} />
 						<Route path='/courier/orders' component={Orders} />
-						<Route path='/courier/orderHistory' component={OrderHistory} />
+						<Route path='/courier/order-history' component={OrderHistory} />
 					</div>
 				</div>
 			</Container>

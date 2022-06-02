@@ -17,7 +17,7 @@ const Admin = () => {
 				<div className="row_start">
 					<div className={styles.pa_menu_items}>
 						<div className={styles.pa_menu_item}>
-							<NavLink className={styles.pa_menu__item} activeClassName={styles.pa_menu_item_active} to={"/admin/orderHistory"}>
+							<NavLink className={styles.pa_menu__item} activeClassName={styles.pa_menu_item_active} to={"/admin/order-history"}>
 								История заказов
 							</NavLink>
 						</div>
@@ -35,7 +35,7 @@ const Admin = () => {
 					<div>
 						<Route path='/admin/users' component={Users} />
 						<Route path='/admin/products' component={Products} />
-						<Route path='/admin/orderHistory' component={OrderHistory} />
+						<Route path='/admin/order-history' component={OrderHistory} />
 					</div>
 				</div>
 			</Container>

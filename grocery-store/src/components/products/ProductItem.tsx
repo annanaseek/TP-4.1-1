@@ -10,7 +10,7 @@ interface Props {
 
 const ProductItem = ({ img, text, salePrice, price }: Props) => {
 	return (
-		<a href="#">
+		<a href="/product-catalog/product/slug">
 			<div className="product_item">
 				<div className="product_item_img">
 					<img src={`/${img}`} alt="" />
