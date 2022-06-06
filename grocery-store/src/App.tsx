@@ -8,15 +8,13 @@ import Order from './pages/order/Order';
 import IntervalDelivery from './pages/order/IntervalDelivery';
 import Authorization from './pages/authorization/Authorization';
 import Registration from './pages/registration/Registration';
-import Profile from './pages/clientPA/profile/Profile';
-import Orders from './pages/clientPA/orders/Orders'
-import OrderProducts from './pages/clientPA/orders/order_products/OrderProducts';
-import OrderHistory from './pages/clientPA/orderHistory/OrderHistory';
-import OrderProductHistory from './pages/clientPA/orderHistory/orderHistory_order/OrderProducts';
-import OrderHistoryAdmin from './pages/admin/orderHistory/OrderHistory';
-import ProductsAdmin from './pages/admin/products/Products';
+import OrderProducts from './pages/clientPA/order_products/OrderProducts';
+import OrderProductHistory from './pages/clientPA/orderHistory_order/OrderProducts';
 import AddCategory from './pages/admin/addCategory/AddCategory';
 import React, { Component } from 'react';
+import ClientPA from './pages/clientPA/ClientPA';
+import Admin from './pages/admin/Admin';
+import Courier from './pages/courier/Courier';
 
 class App extends Component {
   render() {
@@ -30,50 +28,65 @@ class App extends Component {
           <Route path="/catalog">
             <Catalog />
           </Route>
-          <Route path="/productCatalog/slug">
+          <Route path="/product-catalog/slug">
             <Slug />
           </Route>
-          <Route path="/productCatalog/product/slug">
+          <Route path="/product-catalog/product/slug">
             <SlugProduct />
           </Route>
-          <Route path="/basket/Basket">
+          <Route path="/basket">
             <Basket />
           </Route>
-          <Route path="/order/Order">
+          <Route path="/order">
             <Order />
           </Route>
-          <Route path="/order/IntervalDelivery">
+          <Route path="/order/interval-delivery">
             <IntervalDelivery />
           </Route>
-          <Route path="/authorization/Authorization">
+          <Route path="/authorization">
             <Authorization />
           </Route>
-          <Route path="/registration/Registration">
+          <Route path="/registration">
             <Registration />
           </Route>
-          <Route path="/clientPA/profile/Profile">
-            <Profile />
-          </Route>
-          <Route path="/clientPA/orders/Orders">
-            <Orders />
-          </Route>
-          <Route path="/clientPA/orders/order_products/OrderProducts">
+          <Route path="/clientPA/orders/order_products/order-products">
             <OrderProducts />
           </Route>
-          <Route path="/clientPA/orderHistory/OrderHistory">
-            <OrderHistory />
+          <Route path="/clientPA/profile">
+            <ClientPA />
           </Route>
-          <Route path="/clientPA/orderHistory/orderHistory_order/OrderProducts">
+          <Route path="/clientPA/orders">
+            <ClientPA />
+          </Route>
+          <Route path="/clientPA/profile">
+            <ClientPA />
+          </Route>
+          <Route path="/clientPA/orderHistory">
+            <ClientPA />
+          </Route>
+          <Route path="/clientPA/orderHistory/order-history_order/order-products">
             <OrderProductHistory />
           </Route>
-          <Route path="/admin/orderHistory/OrderHistory">
-            <OrderHistoryAdmin />
+          <Route path="/admin/products">
+            <Admin />
           </Route>
-          <Route path="/admin/products/Products">
-            <ProductsAdmin />
+          <Route path="/admin/users">
+            <Admin />
           </Route>
-          <Route path="/admin/addCategory/AddCategory">
+          <Route path="/admin/order-history">
+            <Admin />
+          </Route>
+          <Route path="/admin/add-category">
             <AddCategory />
+          </Route>
+          <Route path="/courier/profile">
+            <Courier />
+          </Route>
+          <Route path="/courier/orders">
+            <Courier />
+          </Route>
+          <Route path="/courier/order-history">
+            <Courier />
           </Route>
         </Switch>
       </BrowserRouter>

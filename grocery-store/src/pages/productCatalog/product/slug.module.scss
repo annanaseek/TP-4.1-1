@@ -1,0 +1,87 @@
+@import '../../../styles/vars';
+
+.product_img_slug {
+	background-size: cover;
+
+	margin-right: 126px;
+}
+
+.product_slug {
+	margin-top: 130px;
+	margin-bottom: 150px;
+}
+
+.product_slug_descript {
+	max-width: 700px;
+}
+
+.product_title {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 150%;
+
+	align-items: center;
+
+}
+
+.product_price_buttom {
+	margin-top: 30px;
+}
+
+.product_price {
+	font-size: 30px;
+	line-height: 152%;
+	font-weight: 700;
+
+	margin-left: 20px;
+}
+
+.product__basket {
+	padding: 10px 23px;
+	background-color: $green;
+	color: $white;
+	border-radius: 60px;
+}
+
+.product_img_basket_margin img{
+	margin-right: 22px;
+}
+
+.product_subtitle {
+	font-weight: 600;
+	font-size: 25px;
+	margin-top: 45px;
+}
+
+.product_subtitle1 {
+	font-weight: 600;
+	font-size: 25px;
+	margin-top: 115px;
+}
+
+.product_text {
+	font-weight: 400;
+	font-size: 25px;
+
+	margin-top: 20px;
+}
+
+.product_nutritional_value_items {
+	margin-top: 37px;
+	margin-left: 20px;
+}
+
+.product_nutritional_value_item {
+	margin-bottom: 17px;
+}
+
+.product_nutritional_value_item__name {
+	font-weight: 500;
+	font-size: 25px;
+}
+
+.product_nutritional_value_item__value {
+	font-weight: 400;
+	font-size: 25px;
+}

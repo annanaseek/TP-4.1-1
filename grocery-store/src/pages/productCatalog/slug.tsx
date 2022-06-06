@@ -6,7 +6,7 @@ import Filters from '../../components/filters/Filters';
 import { Col, Container } from "../../components/ui/grid";
 import ProductItem from "../../components/products/ProductItem";
 import Pagination from "../../components/ui/pagination/Pagination";
-import './slug.scss'
+import styles from "./slug.module.scss"
 
 const Products_catalog = () => {
 	return (
@@ -14,100 +14,100 @@ const Products_catalog = () => {
 			<Header />
 			<Container>
 				<div className="row">
-					<div className="slug_filters">
+					<div className={styles.slug_filters}>
 						<Filters />
 					</div>
-					<div className="slug_catalog">
-						<div className="slug_search">
+					<div className={styles.slug_catalog}>
+						<div className={styles.slug_search}>
 							<Search />
 						</div>
-						<div className="row slug_items">
-							<Col columns={3} className="slug_margin">
+						<div className={`row ${styles.slug_items}`}>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
-							<Col columns={3} className="slug_margin">
+							</div>
+							<div className={styles.slug_margin}>
 								<ProductItem
 									img="product.png"
 									text="Молоко «Вкуснотеево» 3,2 ультрапастеризованное"
 									salePrice={0}
 									price={45} />
-							</Col>
+							</div>
 						</div>
-						<div className="slug_pagination">
+						<div className={styles.slug_pagination}>
 							<Pagination />
 						</div>
 					</div>

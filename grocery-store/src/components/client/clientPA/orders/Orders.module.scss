@@ -1,0 +1,65 @@
+@import '../../../../styles/vars';
+
+.pa_orders {
+	margin-top: 90px;
+}
+table {
+	width: 100%;
+	border-collapse: collapse
+}
+table th {
+	font-weight: 400;
+	font-size: 18px;
+	padding-bottom: 18px;
+	border: none;
+	padding: 18px;
+
+	border-bottom: 1px solid #B1B1B1;
+}
+
+table td {
+	padding: 18px;
+
+	border-bottom: 1px solid #B1B1B1;
+}
+
+.pa_orders_th_1 {
+	text-align: left;
+	padding-left: 25px;
+}
+
+.pa_orders_th_2 {
+	text-align: left;
+}
+
+.pa_orders_th_3 {
+	text-align: center;
+}
+
+.pa_orders_th_4 {
+	text-align: right;
+}
+
+.pa_orders_products {
+	font-weight: 500;
+	font-size: 18px;
+	color: $green;
+}
+
+.pa_orders_address {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.pa_orders_status {
+	font-weight: 400;
+	font-size: 18px;
+	text-decoration-line: underline;
+
+	color: #40BE5C;
+}
+
+.pa_orders_amount {
+	font-weight: 400;
+	font-size: 18px;
+}

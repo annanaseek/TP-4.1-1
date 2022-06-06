@@ -13,10 +13,6 @@
 	background: rgba(245, 77, 78, 0.5);
 }
 
-body,
-ul,
-li {}
-
 label {
 	user-select: none;
 }
@@ -45,10 +41,19 @@ body {
 	position: relative;
 }
 
+input, button {
+	border: 0;
+}
+
 .row {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+.row_start {
+	display: flex;
+	flex-direction: row;
 }
 
 .center {

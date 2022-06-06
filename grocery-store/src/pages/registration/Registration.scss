@@ -1,0 +1,36 @@
+@import '../../styles/vars';
+
+.registration_btn1 {
+	font-weight: 600;
+	font-size: 18px;
+	color: $white;
+	max-width: 120px;
+	width: 100%;
+	margin-bottom: 15px;
+	background: $green;
+	border-radius: 20px;
+	padding: 14px 25%;
+	border-color: $green;
+	box-sizing: border-box;
+}
+
+.center {
+	text-align: center;
+}
+.registration_margin{
+	margin-bottom: 30px;
+}
+
+.registration_btn2 {
+	font-weight: 600;
+	font-size: 18px;
+	color: #686868;
+	max-width: 120px;
+	width: 100%;
+	padding: 14px 30%;
+	background: $white;
+
+	border: 1px solid #686868;
+	box-sizing: border-box;
+	border-radius: 20px;
+}

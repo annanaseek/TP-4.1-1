@@ -1,0 +1,65 @@
+@import '../../../styles/vars';
+
+.courier_orderHistory {
+	margin-top: 90px;
+}
+table {
+	width: 100%;
+	border-collapse: collapse
+}
+table th {
+	font-weight: 400;
+	font-size: 18px;
+	padding-bottom: 18px;
+	border: none;
+	padding: 18px;
+
+	border-bottom: 1px solid #B1B1B1;
+}
+
+table td {
+	padding: 18px;
+
+	border-bottom: 1px solid #B1B1B1;
+}
+
+.courier_orderHistory_th_1 {
+	text-align: left;
+	padding-left: 25px;
+}
+
+.courier_orderHistory_th_2 {
+	text-align: left;
+}
+
+.courier_orderHistory_th_3 {
+	text-align: center;
+}
+
+.courier_orderHistory_th_4 {
+	text-align: right;
+}
+
+.courier_orderHistory_products {
+	font-weight: 500;
+	font-size: 18px;
+	color: $green;
+}
+
+.courier_orderHistory_address {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.courier_orderHistory_status {
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	padding: 0 70px;
+	color: $black;
+}
+
+.courier_orderHistory_amount {
+	font-weight: 400;
+	font-size: 18px;
+}

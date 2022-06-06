@@ -54,23 +54,31 @@ input[type=text]:focus {
 	font-weight: 600;
 	font-size: 18px;
 	color: $white;
+	max-width: 120px;
 	width: 100%;
 	margin-bottom: 15px;
 	background: $green;
 	border-radius: 20px;
-	padding: 14px 0;
+	padding: 14px 30%;
 	border-color: $green;
 	box-sizing: border-box;
+}
+
+.center {
+	text-align: center;
+}
+.auth_margin{
+	margin-bottom: 30px;
 }
 
 .auth_btn2 {
 	font-weight: 600;
 	font-size: 18px;
 	color: #686868;
+	max-width: 120px;
 	width: 100%;
-	padding: 14px 0;
+	padding: 14px 25%;
 	background: $white;
-	border-radius: 20px;
 
 	border: 1px solid #686868;
 	box-sizing: border-box;

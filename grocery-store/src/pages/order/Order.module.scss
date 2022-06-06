@@ -1,0 +1,83 @@
+@import '../../styles/vars';
+
+.ordering {
+	margin-top: 100px;
+}
+
+.ordering_item {
+	margin-bottom: 30px;
+}
+
+.ordering_title {
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.ordering_input input[type=text] {
+	border: 1px solid #C4C4C4;
+	border-radius: 10px;
+	color: #AAAAAA;
+	font-weight: 200;
+	font-size: 18px;
+
+	padding: 10px 15px;
+	width: 50%;
+}
+
+input[type=text]:focus {
+	outline: 0.005px solid #C4C4C4;
+}
+
+select {
+	width: 30%;
+	padding: 10px 15px;
+	border: 1px solid #C4C4C4;
+	border-radius: 10px;
+	font-weight: 200;
+	font-size: 18px;
+
+	color: #AAAAAA;
+}
+
+.ordering_option {
+	margin-left: 5px;
+	width: 5%;
+	background-color: #FFFFFF;
+	box-shadow: 0px 5px 11px rgba(124, 124, 124, 0.1);
+
+	border: none;
+	border-radius: 30px;
+}
+
+select:focus {
+	outline: 0.005px solid #C4C4C4;
+}
+
+
+.ordering_comment {
+	border: 1px solid #C4C4C4;
+	border-radius: 10px;
+	color: #AAAAAA;
+	font-weight: 200;
+	font-size: 18px;
+
+	padding: 10px 15px;
+	width: 50%;
+}
+
+.ordering_comment:focus {
+	outline: 0.005px solid #C4C4C4;
+}
+
+.ordering_btn_container {
+	margin-bottom: 95px;
+}
+
+.ordering_btn {
+	color: $white;
+	background-color: $green;
+	padding: 15px 50px;
+	border-radius: 20px;
+	border: 0;
+}
