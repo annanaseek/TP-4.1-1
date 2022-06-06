@@ -5,6 +5,9 @@ import { Container } from "../../components/ui/grid";
 import './Basket.scss'
 
 const Basket = () => {
+
+
+
 	return (
 		<>
 			<Header />
@@ -19,11 +22,11 @@ const Basket = () => {
 								<div className="basket_title">
 									Молоко «Вкуснотеево» 3,2 ультрапастеризованное, 925 мл
 								</div>
-								<div className="row basket_amount">
+								<div className="row center basket_amount">
 									<span className="basket_btn_amount_minus">
 										-
 									</span>
-									<span className="basket_amount_text">
+									<span className="basket_amount_text" id="amount-1">
 										1 шт
 									</span>
 									<span className="basket_btn_amount_plus">
@@ -41,7 +44,7 @@ const Basket = () => {
 								<div className="basket_title">
 									Молоко «Вкуснотеево» 3,2 ультрапастеризованное, 925 мл
 								</div>
-								<div className="basket_amount">
+								<div className="row center basket_amount">
 									<span className="basket_btn_amount_minus">
 										-
 									</span>

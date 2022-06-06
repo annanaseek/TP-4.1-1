@@ -1,0 +1,11 @@
+@import "fonts";
+@import "vars";
+@import "mixins";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  align-items: center;
+}
