@@ -23,6 +23,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Молоко,<br /> сыр, яйца"
 							img="catalog-1.png"
+							href="/product-catalog/slug"
 							color="#CBF3FF"
 						/>
 					</a>
@@ -32,6 +33,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Хлеб и<br />выпечка"
 							img="catalog-2.png"
+							href="/product-catalog/slug"
 							color="#FFF0CB"
 						/>
 					</a>
@@ -41,6 +43,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Мясо, птица<br />деликатесы"
 							img="catalog-3.png"
+							href="/product-catalog/slug"
 							color="#FFE4CB"
 						/>
 					</a>
@@ -50,6 +53,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Рыба и<br />морепродукты"
 							img="catalog-4.png"
+							href="/product-catalog/slug"
 							color="#CBE3FF"
 						/>
 					</a>
@@ -59,6 +63,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Соки, воды,<br />напитки"
 							img="catalog-5.png"
+							href="/product-catalog/slug"
 							color="#D5FFCB"
 						/>
 					</a>
@@ -68,6 +73,7 @@ const ProductsAdmin = () => {
 						<CatalogItem
 							text="Сладости и<br />снеки"
 							img="catalog-6.png"
+							href="/product-catalog/slug"
 							color="#FCE8FF"
 						/>
 					</a>

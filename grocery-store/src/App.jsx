@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Main from './pages/Main';
 import Catalog from './pages/Catalog';
-import Slug from './pages/productCatalog/slug'
+import SlugProducts from './pages/productCatalog/Products_catalog'
 import SlugProduct from './pages/productCatalog/product/slug'
 import Basket from './pages/basket/Basket';
 import Order from './pages/order/Order';
@@ -25,12 +25,15 @@ class App extends Component {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route path="/catalog">
+          <Route path="/catalog" >
             <Catalog />
+            <Route path="/catalog/:productsSlug">
+              <SlugProducts />
+            </Route>
           </Route>
-          <Route path="/product-catalog/slug">
+          {/* <Route path="/product-catalog/slug">
             <Slug />
-          </Route>
+          </Route> */}
           <Route path="/product-catalog/product/slug">
             <SlugProduct />
           </Route>

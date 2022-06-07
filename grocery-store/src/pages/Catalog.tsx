@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../components/layout/header/Header'
 import Footer from '../components/layout/footer/Footer'
 import { Col, Container } from "../components/ui/grid";
@@ -6,7 +6,30 @@ import Search from "../components/ui/search/Search";
 import CatalogItem from "../components/firstPage/catalog/catalogItem/CatalogItem";
 import './Catalog.scss'
 
-const Catalog = () => {
+function Catalog() {
+
+	const [appState, setAppState] = useState([{ name: "", imageUrl: "", id: "" }]);
+	const apiUrl = process.env.BACKEND_CATALOG
+	console.log(process.env.BACKEND_CATALOG)
+
+	useEffect(() => {
+
+		fetch("http://localhost:3000/api/category/root",
+			{
+				mode: "cors",
+				method: "GET"
+			}
+		)
+			.then(response => response.json())
+			.then(
+				(result) => {
+					setAppState(result);
+				},
+				// Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+				// чтобы не перехватывать исключения из ошибок в самих компонентах.
+			)
+	}, []);
+
 	return (
 		<>
 			<Header />
@@ -15,7 +38,17 @@ const Catalog = () => {
 					<Search />
 				</div>
 				<div className="row items catalog_catalog">
-					<Col columns={4}>
+					{appState.map((item, key) => (
+						<Col columns={4} key={key}>
+							<CatalogItem
+								text={item.name}
+								img={item.imageUrl}
+								href={`/catalog/${item.id}`}
+								color="#CBF3FF"
+							/>
+						</Col>
+					))}
+					{/* <Col columns={4}>
 						<CatalogItem
 							text="Молоко,<br /> сыр, яйца"
 							img="catalog-1.png"
@@ -56,12 +89,14 @@ const Catalog = () => {
 							img="catalog-6.png"
 							color="#FCE8FF"
 						/>
-					</Col>
+					</Col> */}
 				</div>
 			</Container>
 			<Footer />
 		</>
 	);
 }
+
+
 
 export default Catalog;
