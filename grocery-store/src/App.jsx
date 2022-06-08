@@ -1,7 +1,8 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useParams, useRouteMatch } from 'react-router-dom';
 import Main from './pages/Main';
 import Catalog from './pages/Catalog';
-import SlugProducts from './pages/productCatalog/Products_catalog'
+import Products_catalog from './pages/productCatalog/Products_catalog'
+import ProductsCatalogFilter from './pages/productCatalog/productCatalog_filter/ProductsCatalogFilter';
 import SlugProduct from './pages/productCatalog/product/slug'
 import Basket from './pages/basket/Basket';
 import Order from './pages/order/Order';
@@ -15,6 +16,7 @@ import React, { Component } from 'react';
 import ClientPA from './pages/clientPA/ClientPA';
 import Admin from './pages/admin/Admin';
 import Courier from './pages/courier/Courier';
+import SearchProducts from './components/searchProducts/SearchProducts'
 
 class App extends Component {
   render() {
@@ -25,12 +27,21 @@ class App extends Component {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route path="/catalog" >
-            <Catalog />
-            <Route path="/catalog/:productsSlug">
-              <SlugProducts />
-            </Route>
+          <Route path="/catalog/:id/:id">
+              <ProductsCatalogFilter />
           </Route>
+          <Route path="/catalog/:id">
+              <Products_catalog />
+          </Route>
+          <Route path="/catalog" exact>
+            <Catalog />
+          </Route>
+          <Route path="/search_product">
+            <SearchProducts />
+          </Route>
+          {/* <Route path="/catalog/:id">
+            <TEST />
+          </Route> */}
           {/* <Route path="/product-catalog/slug">
             <Slug />
           </Route> */}
@@ -54,9 +65,6 @@ class App extends Component {
           </Route>
           <Route path="/clientPA/orders/order_products/order-products">
             <OrderProducts />
-          </Route>
-          <Route path="/clientPA/profile">
-            <ClientPA />
           </Route>
           <Route path="/clientPA/orders">
             <ClientPA />
@@ -95,6 +103,14 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+
+
+}
+
+function TEST() {
+  let { id } = useParams()
+
+  return id
 }
 
 export default App;

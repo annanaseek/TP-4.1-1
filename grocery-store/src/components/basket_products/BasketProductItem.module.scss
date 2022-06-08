@@ -17,7 +17,7 @@
 }
 
 .basket_amount {
-	padding: 10px 15px;
+	padding: 10px 10px;
 	background: rgba(210, 210, 213, 0.4);
 	border-radius: 20px;
 	margin-right: 52px;
@@ -91,13 +91,13 @@
 .basket_info__amount_cost_title {
 	font-weight: 500;
 	font-size: 22px;
-		margin: 0;
+	margin: 0;
 }
 
 .basket_info__amount_cost_cost {
 	font-weight: 500;
 	font-size: 25px;
-		margin: 0;
+	margin: 0;
 }
 
 .basket_info__order_btn {
@@ -137,4 +137,11 @@
 
 .basket-order_interval-link {
 	color: $green;
+}
+
+.basket_delete {
+	font-size: 15px;
+	font-weight: 500;
+	background-color: #fff;
+	margin-left: 50px;
 }

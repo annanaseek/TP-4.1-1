@@ -1,47 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./OrderHistory.module.scss"
 
 const OrderHistory = () => {
+	const [ordersState, setOrdersState] = useState([]);
+
+
+	useEffect(() => {
+
+		fetch(`http://localhost:3000/api/order/all/my`,
+			{
+				mode: "cors",
+				method: "GET"
+			}
+		)
+			.then(response => response.json())
+			.then(
+				(result) => {
+					setOrdersState(JSON.parse(JSON.stringify(result)));
+				},
+
+			)
+	}, []);
+
+	console.log(ordersState)
+
 	return (
 		<div className={styles.pa_orderHistory}>
-			<table>
-				<tr>
-					<th className={styles.pa_orderHistory_th_1}>Товары</th>
-					<th className={styles.pa_orderHistory_th_2}>Адрес</th>
-					<th className={styles.pa_orderHistory_th_3}>Статус</th>
-					<th className={styles.pa_orderHistory_th_4}>Сумма</th>
-				</tr>
-				<tr>
-					<td className={styles.pa_orderHistory_products}>Просмотреть товары</td>
-					<td className={styles.pa_orderHistory_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
-					<td className={styles.pa_orderHistory_status}>Собирается</td>
-					<td className={styles.pa_orderHistory_amount}>168,90 ₽</td>
-				</tr>
-				<tr>
-					<td className={styles.pa_orderHistory_products}>Просмотреть товары</td>
-					<td className={styles.pa_orderHistory_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
-					<td className={styles.pa_orderHistory_status}>В пути</td>
-					<td className={styles.pa_orderHistory_amount}>168,90 ₽</td>
-				</tr>
-				<tr>
-					<td className={styles.pa_orderHistory_products}>Просмотреть товары</td>
-					<td className={styles.pa_orderHistory_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
-					<td className={styles.pa_orderHistory_status}>В обработке</td>
-					<td className={styles.pa_orderHistory_amount}>168,90 ₽</td>
-				</tr>
-				<tr>
-					<td className={styles.pa_orderHistory_products}>Просмотреть товары</td>
-					<td className={styles.pa_orderHistory_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
-					<td className={styles.pa_orderHistory_status}>Собирается</td>
-					<td className={styles.pa_orderHistory_amount}>168,90 ₽</td>
-				</tr>
-				<tr>
-					<td className={styles.pa_orderHistory_products}>Просмотреть товары</td>
-					<td className={styles.pa_orderHistory_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
-					<td className={styles.pa_orderHistory_status}>В пути</td>
-					<td className={styles.pa_orderHistory_amount}>168,90 ₽</td>
-				</tr>
-			</table>
+			{(ordersState.length == 0) ?
+				"У вас еще нет заказов"
+				:
+				<table>
+					<tr>
+						<th className={styles.pa_orderHistory_th_1}>Товары</th>
+						<th className={styles.pa_orderHistory_th_2}>Адрес</th>
+						<th className={styles.pa_orderHistory_th_3}>Статус</th>
+						<th className={styles.pa_orderHistory_th_4}>Сумма</th>
+					</tr>
+
+					{ordersState?.map((item: { address: string, price: string, status: string }, key) => (
+						<tr key={key}>
+							<td className={styles.pa_orderHistory_products}>
+								<a href="#">
+									Просмотреть товары
+								</a></td>
+							<td className={styles.pa_orderHistory_address}>{item.address}</td>
+							<td className={styles.pa_orderHistory_status}>{item.status}</td>
+							<td className={styles.pa_orderHistory_amount}>{item.price} ₽</td>
+						</tr>
+					))}
+
+					{/* <tr>
+						<td className={styles.pa_orders_products}>Просмотреть товары</td>
+						<td className={styles.pa_orders_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
+						<td className={styles.pa_orders_status}>Подтвердить получение</td>
+						<td className={styles.pa_orders_amount}>168,90 ₽</td>
+					</tr>
+					<tr>
+						<td className={styles.pa_orders_products}>Просмотреть товары</td>
+						<td className={styles.pa_orders_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
+						<td className={styles.pa_orders_status}>Подтвердить получение</td>
+						<td className={styles.pa_orders_amount}>168,90 ₽</td>
+					</tr>
+					<tr>
+						<td className={styles.pa_orders_products}>Просмотреть товары</td>
+						<td className={styles.pa_orders_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
+						<td className={styles.pa_orders_status}>Подтвердить получение</td>
+						<td className={styles.pa_orders_amount}>168,90 ₽</td>
+					</tr>
+					<tr>
+						<td className={styles.pa_orders_products}>Просмотреть товары</td>
+						<td className={styles.pa_orders_address}>г. Воронеж, Олимпийский бульвар 56, 888</td>
+						<td className={styles.pa_orders_status}>Подтвердить получение</td>
+						<td className={styles.pa_orders_amount}>168,90 ₽</td>
+					</tr> */}
+				</table>
+			}
 		</div>
 	);
 }

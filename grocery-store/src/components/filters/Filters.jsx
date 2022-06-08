@@ -1,66 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import './Filters.scss'
+import { Link } from "react-router-dom";
 
-const Filters = () => {
-	const [filterState, setFilterState] = useState([{ name: "", imageUrl: "", id: 0 }]);
+/* interface Props {
+	data: {
+		name: string,
+		items: [{
+			name: string,
+			parentId: 0,
+		}]
+	}
+} */
 
-	useEffect(() => {
-
-		fetch("http://localhost:3000/api/category/root/all",
-			{
-				mode: "cors",
-				method: "GET"
-			}
-		)
-			.then(response => response.json())
-			.then(
-				(result) => {
-					setFilterState(result);
-				},
-				// Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-				// чтобы не перехватывать исключения из ошибок в самих компонентах.
-			)
-	}, [setFilterState]);
-
-	const postSlug = useParams();
-	let filtredfilterData
-
-	useEffect(() => {
-
-		filtredfilterData = filterState.filter((catalog) => catalog.id == postSlug.productsSlug)
-
-		console.log(postSlug.productsSlug)
-
-	}, [postSlug]);
+const Filters = (props) => {
+	console.log(props.data)
 
 	return (
 		<div className="filters">
 			<div className="filters_title">
-				<a href="#" >
+				<a href="/catalog" >
 					Каталог товаров
 				</a>
 			</div>
 			<hr className="filters_line" />
 			<div className="filters_slug_title">
-				Молоко, сыр, яйца
+				{props.data.name}
 			</div>
 			<div className="filters_slug_items">
-				<div className="filters_slug_item">
-					<a href="#">
-						Молоко
-					</a>
-				</div>
-				<div className="filters_slug_item">
-					<a href="#">
-						Сыр
-					</a>
-				</div>
-				<div className="filters_slug_item">
-					<a href="#">
-						Творог, cырки
-					</a>
-				</div>
+				{props.items?.map((item, key) => (
+					<div className="filters_slug_item" key={key}>
+						<Link to={`/catalog/${props.data.id}/${item.id}`}>
+							{item.name}
+						</Link>
+					</div>
+				))}
+
 			</div>
 		</div>
 	);

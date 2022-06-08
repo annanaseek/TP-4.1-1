@@ -1,12 +1,15 @@
 @import '../../styles/vars';
 
+button {
+	cursor: pointer;
+}
+
 .auth {
 	width: 560px;
 	margin: 0 auto;
 	padding: 60px 60px;
 	margin-top: 153px;
 	margin-bottom: 180px;
-
 	background-color: $white;
 	border: 2.5px solid #F3F4F6;
 	box-sizing: border-box;
@@ -38,7 +41,19 @@
 	width: 100%;
 }
 
-input[type=text]:focus {
+.auth_item__input input[type=password] {
+	border: 1px solid #C4C4C4;
+	border-radius: 10px;
+	color: #AAAAAA;
+	font-weight: 200;
+	font-size: 18px;
+
+	padding: 10px 15px;
+	width: 100%;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
 	outline: 0.005px solid #C4C4C4;
 }
 
@@ -54,12 +69,10 @@ input[type=text]:focus {
 	font-weight: 600;
 	font-size: 18px;
 	color: $white;
-	max-width: 120px;
-	width: 100%;
 	margin-bottom: 15px;
 	background: $green;
 	border-radius: 20px;
-	padding: 14px 30%;
+	padding: 16px 32%;
 	border-color: $green;
 	box-sizing: border-box;
 }
@@ -67,7 +80,8 @@ input[type=text]:focus {
 .center {
 	text-align: center;
 }
-.auth_margin{
+
+.auth_margin {
 	margin-bottom: 30px;
 }
 

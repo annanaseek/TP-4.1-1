@@ -9,7 +9,7 @@ import Profile from "../../components/courier/profile/Profile";
 import OrderHistory from "../../components/courier/orderHistory/OrderHistory";
 import Orders from "../../components/courier/orders/Orders";
 
-const Admin = () => {
+const Courier = () => {
 	return (
 		<>
 			<Header />
@@ -44,4 +44,4 @@ const Admin = () => {
 	);
 }
 
-export default Admin;
+export default Courier;

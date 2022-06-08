@@ -47,7 +47,7 @@ const Catalog = () => {
 								<CatalogItem
 									text={item.name}
 									img={item.imageUrl}
-									href={`/product-catalog/${item.id}`}
+									href={`/catalog/${item.id}`}
 									color="#CBF3FF"
 								/>
 							</Col>

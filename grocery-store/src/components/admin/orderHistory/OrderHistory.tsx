@@ -1,7 +1,28 @@
-import React from "react";
 import styles from './OrderHistory.module.scss';
+import React, { useEffect, useState } from "react";
 
 const OrderHistory = () => {
+	const [ordersState, setOrdersState] = useState([]);
+
+
+	useEffect(() => {
+
+		fetch(`http://localhost:3000/api/order/all/admin`,
+			{
+				mode: "cors",
+				method: "GET"
+			}
+		)
+			.then(response => response.json())
+			.then(
+				(result) => {
+					setOrdersState(JSON.parse(JSON.stringify(result)));
+				},
+
+			)
+	}, []);
+
+	console.log(ordersState)
 	return (
 		<>
 			<div className={styles.pa_orderHistory}>

@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss"
 
 const Profile = () => {
+	const user = {
+		id: localStorage.getItem('id'),
+		name: localStorage.getItem('name'),
+		phone: localStorage.getItem('phone'),
+		role: localStorage.getItem('role'),
+	}
 	return (
 		<>
 			<div className={styles.courier_profile}>
@@ -11,7 +17,7 @@ const Profile = () => {
 							Имя
 						</div>
 						<div className={styles.courier_profile_item_text}>
-							Василий
+							{user.name}
 						</div>
 					</div>
 					<div className={styles.courier_profile_item_phone}>
@@ -19,11 +25,11 @@ const Profile = () => {
 							Телефон
 						</div>
 						<div className={styles.courier_profile_item_text}>
-							8(957) 555-98-55
+							{user.phone}
 						</div>
 					</div>
 				</div>
-				<div className="row">
+				{/* <div className="row">
 					<div className={styles.courier_profile_item_pass}>
 						<div className={styles.courier_profile_item_title}>
 							Пароль
@@ -41,7 +47,7 @@ const Profile = () => {
 							<span className={styles.checkbox_ios_switch}></span>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 			<a href="/authorization" className={styles.courier_profile_btn_text}>
 				Выйти из аккаунта

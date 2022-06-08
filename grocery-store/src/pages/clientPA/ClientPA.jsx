@@ -10,6 +10,15 @@ import OrderHistory from "../../components/client/clientPA/orderHistory/OrderHis
 import { NavLink } from "react-router-dom";
 
 const ClientPA = () => {
+
+	const user = {
+		id: localStorage.getItem('id'),
+		name: localStorage.getItem('name'),
+		phone: localStorage.getItem('phone'),
+		role: localStorage.getItem('role'),
+	}
+
+	console.log(user)
 	return (
 		<>
 			<Header />
@@ -33,7 +42,9 @@ const ClientPA = () => {
 						</div>
 					</div>
 					<div>
-						<Route path='/clientPA/profile' component={Profile} />
+						<Route path='/clientPA/profile'>
+							<Profile user={user}/>
+						</Route>
 						<Route path='/clientPA/orders' component={Orders} />
 						<Route path='/clientPA/orderHistory' component={OrderHistory} />
 					</div>
