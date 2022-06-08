@@ -1,0 +1,76 @@
+@startuml
+class ru.vsu.cs.grocery.rest.models.User {
+- Long id
+- String name
+- String phone
+- Role role
+}
+class ru.vsu.cs.grocery.rest.models.OrderInfo {
+- String address
+- Integer interval
+}
+class ru.vsu.cs.grocery.rest.models.UserWithPassword {
+- String password
+}
+enum ru.vsu.cs.grocery.rest.models.Status {
++  BASKET
++  CREATED
++  IN_PROGRESS
++  ON_WAY
++  DELIVERED
++  CONFIRMED
+}
+class ru.vsu.cs.grocery.rest.models.Product {
+- Long id
+- String name
+- String description
+- BigDecimal price
+- Integer count
+- String imageUrl
+- String composition
+- Double protein
+- Double fats
+- Double carbohydrates
+- Double calories
+- Long categoryId
+}
+enum ru.vsu.cs.grocery.rest.models.Role {
++  USER
++  COURIER
++  ADMIN
+}
+class ru.vsu.cs.grocery.rest.models.Category {
+- Long id
+- Long parentId
+- String name
+- String imageUrl
+- List<Category> items
+}
+class ru.vsu.cs.grocery.rest.models.ProductWithCount {
+- Product product
+- Integer count
+}
+class ru.vsu.cs.grocery.rest.models.Basket {
+- Long id
+- List<ProductWithCount> products
+- BigDecimal price
+}
+class ru.vsu.cs.grocery.rest.models.Order {
+- Long id
+- User client
+- User courier
+- String address
+- Status status
+- ZonedDateTime date
+- Integer orderInterval
+- BigDecimal price
+- List<ProductWithCount> products
+}
+enum ru.vsu.cs.grocery.rest.models.CourierStatus {
++  FREE
++  BUSY
+}
+
+
+ru.vsu.cs.grocery.rest.models.User <|-- ru.vsu.cs.grocery.rest.models.UserWithPassword
+@enduml

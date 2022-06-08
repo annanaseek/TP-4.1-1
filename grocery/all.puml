@@ -1,0 +1,340 @@
+@startuml
+class ru.vsu.cs.grocery.core.mapper.UserMapper {
++ User map2User(UserItem)
++ UserItem map2UserItem(User)
++ List<User> map2User(List<UserItem>)
++ List<UserItem> map2UserItem(List<User>)
+}
+class ru.vsu.cs.grocery.core.services.BasketService {
+- UserService userService
+- ProductRepository productRepository
+- OrderRepository orderRepository
+- ProductOrderRepository productOrderRepository
+- OrderMapper mapper
++ Basket addProduct(String,String)
++ Basket deleteProduct(String)
++ OrderItem getOrInitBasketOrder()
++ Basket getBasket(Long)
++ Basket getBasket()
+}
+class ru.vsu.cs.grocery.core.services.OrderService {
+- BasketService basketService
+- UserService userService
+- OrderRepository orderRepository
+- ProductOrderRepository productOrderRepository
+- OrderMapper mapper
++ Order createOrder(OrderInfo)
++ Order updateStatus(String,String)
++ List<Order> getMyHistory()
++ List<Order> getAll()
++ List<Order> getCourierOrders()
++ Order getById(String)
+- List<Order> map2Orders(List<OrderItem>)
+- Order map2Order(OrderItem)
+}
+interface ru.vsu.cs.grocery.db.repository.OrderRepository {
+~ OrderItem findByClient_IdAndStatus(Long,Status)
+~ List<OrderItem> findAllByClient_IdOrderByDate(Long)
+~ List<OrderItem> findAllByCourier_IdOrderByDate(Long)
+}
+class ru.vsu.cs.grocery.core.mapper.OrderMapper {
+- ProductMapper productMapper
+- UserMapper userMapper
++ Basket map2Basket(List<ProductOrderItem>,Long)
++ Order map2Order(OrderItem,List<ProductOrderItem>)
+}
+class ru.vsu.cs.grocery.rest.api.BasketController {
+- BasketService basketService
++ Basket getBasket()
++ Basket addProduct(String,String)
++ Basket deleteProduct(String)
+}
+class ru.vsu.cs.grocery.rest.models.Category {
+- Long id
+- Long parentId
+- String name
+- String imageUrl
+- List<Category> items
+}
+class ru.vsu.cs.grocery.rest.models.Basket {
+- Long id
+- List<ProductWithCount> products
+- BigDecimal price
+}
+class ru.vsu.cs.grocery.rest.exception.NotFoundException {
+}
+class ru.vsu.cs.grocery.core.mapper.ProductMapper {
+- CategoryMapper categoryMapper
++ Product map2Product(ProductItem)
++ ProductItem map2ProductItem(Product)
++ List<Product> map2Product(List<ProductItem>)
++ List<ProductItem> map2ProductItem(List<Product>)
+}
+class ru.vsu.cs.grocery.rest.api.UserController {
+- UserService userService
++ ResponseEntity<User> createUser(UserWithPassword)
++ ResponseEntity<User> me()
++ ResponseEntity<User> editUser(UserWithPassword)
++ ResponseEntity<Void> deleteUser()
++ List<User> getAll()
++ User setRole(String,String)
++ ResponseEntity<Void> setRole(String)
+}
+class ru.vsu.cs.grocery.rest.exception.handler.ExceptionAdvice {
++ ResponseEntity<ExceptionResponse> handleNotFoundException(NotFoundException)
++ ResponseEntity<ExceptionResponse> handleFileNotLoadedException(BadParametersException)
+}
+class ru.vsu.cs.grocery.db.models.UserItem {
+- Long id
+- String name
+- String phone
+- String password
+- Role role
+- CourierStatus status
+}
+class ru.vsu.cs.grocery.rest.models.User {
+- Long id
+- String name
+- String phone
+- Role role
+}
+class ru.vsu.cs.grocery.rest.models.OrderInfo {
+- String address
+- Integer interval
+}
+class ru.vsu.cs.grocery.db.models.CategoryItem {
+- Long id
+- Long parentId
+- String imageUrl
+- String name
+}
+class ru.vsu.cs.grocery.rest.api.CategoryController {
+- CategoryService categoryService
++ List<Category> getAllCategory()
++ List<Category> getAllRootCategory()
++ List<Category> getAllRootCategoryWhitItems()
++ Category getCategory(String)
++ Category createCategory(Category)
++ Category updateCategory(String,Category)
++ ResponseEntity<Void> deleteCategory(String)
+}
+class ru.vsu.cs.grocery.security.SecurityConfig {
+- UserDetailsService userDetailsService
+- UserRepository userRepository
+- UserMapper userMapper
+~ PasswordEncoder passwordEncoder()
+# void configure(AuthenticationManagerBuilder)
+# void configure(HttpSecurity)
+}
+interface ru.vsu.cs.grocery.db.repository.CategoryRepository {
+~ List<CategoryItem> findAllByParentIdIsNull()
+~ List<CategoryItem> findAllByParentId(Long)
+~ List<CategoryItem> search(String)
+}
+enum ru.vsu.cs.grocery.rest.models.Status {
++  BASKET
++  CREATED
++  IN_PROGRESS
++  ON_WAY
++  DELIVERED
++  CONFIRMED
+}
+class ru.vsu.cs.grocery.rest.api.ProductController {
+- ProductService productService
++ List<Product> getAllProducts()
++ List<Product> getProductsByCategoryId(String)
++ List<Product> searchProduct(String)
++ Product createProduct(Product)
++ Product updateProduct(String,Product)
++ ResponseEntity<Void> deleteProduct(String)
+}
+class ru.vsu.cs.grocery.security.handler.AuthenticationSuccessHandlerImpl {
+- {static} Logger logger
+- UserRepository userRepository
+- UserMapper userMapper
+# {static} ObjectMapper OBJECT_MAPPER
++ void onAuthenticationSuccess(HttpServletRequest,HttpServletResponse,FilterChain,Authentication)
++ void onAuthenticationSuccess(HttpServletRequest,HttpServletResponse,Authentication)
+}
+enum ru.vsu.cs.grocery.rest.models.Role {
++  USER
++  COURIER
++  ADMIN
+}
+class ru.vsu.cs.grocery.security.handler.LogoutSuccessHandlerImpl {
+- {static} Logger logger
++ void onLogoutSuccess(HttpServletRequest,HttpServletResponse,Authentication)
+}
+class ru.vsu.cs.grocery.core.services.UserService {
+- UserMapper userMapper
+- UserRepository userRepository
+- PasswordEncoder passwordEncoder
++ User registration(UserWithPassword)
++ UserItem getUserItem()
++ User getUser()
++ User editUser(UserWithPassword)
++ boolean deleteMe()
++ List<User> getAllUsers()
++ User updateRole(String,String)
++ boolean deleteUser(String)
++ UserItem getCourier()
+}
+class ru.vsu.cs.grocery.rest.exception.handler.ExceptionResponse {
+- String message
+}
+enum ru.vsu.cs.grocery.rest.models.CourierStatus {
++  FREE
++  BUSY
+}
+class ru.vsu.cs.grocery.security.converter.AuthenticationConverterImpl {
+- {static} ObjectMapper OBJECT_MAPPER
+- {static} Logger logger
++ Authentication convert(HttpServletRequest)
+}
+interface ru.vsu.cs.grocery.db.repository.ProductOrderRepository {
+~ List<ProductOrderItem> findAllByOrderId(Long)
+~ Optional<ProductOrderItem> findByOrderIdAndProduct_Id(Long,Long)
+~ void deleteByOrderIdAndProduct_Id(Long,Long)
+}
+class ru.vsu.cs.grocery.rest.models.UserWithPassword {
+- String password
+}
+class ru.vsu.cs.grocery.security.service.CustomUserDetailsService {
+- UserRepository userRepository
++ UserDetails loadUserByUsername(String)
+}
+interface ru.vsu.cs.grocery.db.repository.UserRepository {
+~ UserItem findByPhone(String)
+~ UserItem findByStatus(CourierStatus)
+~ UserItem findByRole(Role)
+}
+interface ru.vsu.cs.grocery.db.repository.ProductRepository {
+~ List<ProductItem> findAllByCategoryIdIn(List<Long>)
+~ List<ProductItem> findAllByCategoryIdIs(Long)
+~ List<ProductItem> search(String)
+}
+class ru.vsu.cs.grocery.db.models.ProductOrderItem {
+- Long id
+- Long orderId
+- ProductItem product
+- Integer count
+}
+class ru.vsu.cs.grocery.db.models.OrderItem {
+- Long id
+- UserItem client
+- UserItem courier
+- String address
+- Status status
+- ZonedDateTime date
+- Integer orderInterval
+}
+class ru.vsu.cs.grocery.core.services.ScheduleService {
+}
+class ru.vsu.cs.grocery.rest.exception.BadParametersException {
+}
+class ru.vsu.cs.grocery.core.mapper.CategoryMapper {
++ Category map2Category(CategoryItem)
++ CategoryItem map2CategoryItem(Category)
++ List<Category> map2Category(List<CategoryItem>)
++ List<CategoryItem> map2CategoryItem(List<Category>)
+}
+class ru.vsu.cs.grocery.core.services.CategoryService {
+- CategoryRepository categoryRepository
+- CategoryMapper categoryMapper
++ List<Category> getAllCategory()
++ List<Category> getAllRootCategory()
++ List<Category> getAllRootCategoryWhitItems()
++ Category getCategory(String)
++ Category createCategory(Category)
++ Category updateCategory(String,Category)
++ boolean deleteCategory(String)
++ List<Category> search(String)
+}
+class ru.vsu.cs.grocery.security.models.User {
+- String id
+- String username
+- String password
+}
+class ru.vsu.cs.grocery.rest.models.Product {
+- Long id
+- String name
+- String description
+- BigDecimal price
+- Integer count
+- String imageUrl
+- String composition
+- Double protein
+- Double fats
+- Double carbohydrates
+- Double calories
+- Long categoryId
+}
+class ru.vsu.cs.grocery.GroceryApplication {
++ {static} void main(String[])
+}
+class ru.vsu.cs.grocery.db.models.ProductItem {
+- Long id
+- String name
+- String description
+- BigDecimal price
+- Integer count
+- String imageUrl
+- String composition
+- Double protein
+- Double fats
+- Double carbohydrates
+- Double calories
+- Long categoryId
+}
+class ru.vsu.cs.grocery.rest.models.ProductWithCount {
+- Product product
+- Integer count
+}
+class ru.vsu.cs.grocery.rest.api.OrderController {
+- OrderService orderService
++ List<Order> getHistory()
++ List<Order> getAll()
++ List<Order> getCourierOrders()
++ Order getById(String)
++ Order createOrder(OrderInfo)
++ ResponseEntity<Order> updateStatus(String,String)
+}
+class ru.vsu.cs.grocery.rest.models.Order {
+- Long id
+- User client
+- User courier
+- String address
+- Status status
+- ZonedDateTime date
+- Integer orderInterval
+- BigDecimal price
+- List<ProductWithCount> products
+}
+class ru.vsu.cs.grocery.core.services.ProductService {
+- ProductMapper productMapper
+- CategoryMapper categoryMapper
+- ProductRepository productRepository
+- CategoryService categoryService
++ List<Product> getAllProduct()
++ List<Product> getAllProductByCategoryId(String)
++ List<Product> search(String)
++ boolean delete(String)
++ Product create(Product)
++ Product update(Product)
+}
+
+
+org.springframework.data.jpa.repository.JpaRepository <|-- ru.vsu.cs.grocery.db.repository.OrderRepository
+ru.vsu.cs.grocery.rest.exception.RuntimeException <|-- ru.vsu.cs.grocery.rest.exception.NotFoundException
+org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter <|-- ru.vsu.cs.grocery.security.SecurityConfig
+org.springframework.data.jpa.repository.JpaRepository <|-- ru.vsu.cs.grocery.db.repository.CategoryRepository
+org.springframework.security.web.authentication.AuthenticationSuccessHandler <|.. ru.vsu.cs.grocery.security.handler.AuthenticationSuccessHandlerImpl
+org.springframework.security.web.authentication.logout.LogoutSuccessHandler <|.. ru.vsu.cs.grocery.security.handler.LogoutSuccessHandlerImpl
+org.springframework.security.web.authentication.AuthenticationConverter <|.. ru.vsu.cs.grocery.security.converter.AuthenticationConverterImpl
+org.springframework.data.jpa.repository.JpaRepository <|-- ru.vsu.cs.grocery.db.repository.ProductOrderRepository
+ru.vsu.cs.grocery.rest.models.User <|-- ru.vsu.cs.grocery.rest.models.UserWithPassword
+org.springframework.security.core.userdetails.UserDetailsService <|.. ru.vsu.cs.grocery.security.service.CustomUserDetailsService
+org.springframework.data.jpa.repository.JpaRepository <|-- ru.vsu.cs.grocery.db.repository.UserRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- ru.vsu.cs.grocery.db.repository.ProductRepository
+ru.vsu.cs.grocery.rest.exception.RuntimeException <|-- ru.vsu.cs.grocery.rest.exception.BadParametersException
+@enduml
