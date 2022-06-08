@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  app:
+    image: 'annanaseek/grocery:0.0.1'
+    container_name: app
+    ports:
+      - "7777:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/grocery
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=pswd
+
+  db:
+    image: 'postgres:latest'
+    container_name: db
+    ports:
+      - "6666:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pswd
+      - POSTGRES_DB=grocery
