@@ -62,8 +62,8 @@ const Basket = () => {
 									</a>
 								</div>
 								<div className="basket_info__interval_delivery_btn">
-									<a href="/order/interval-delivery" className="basket-order_interval-link">
-										Оформить заказ
+									<a href="/order_interval-delivery" className="basket-order_interval-link">
+										Оформить интервальную доставку
 									</a>
 								</div>
 							</div></>

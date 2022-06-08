@@ -54,7 +54,7 @@ class App extends Component {
           <Route path="/order">
             <Order />
           </Route>
-          <Route path="/order/interval-delivery">
+          <Route path="/order_interval-delivery">
             <IntervalDelivery />
           </Route>
           <Route path="/authorization">
